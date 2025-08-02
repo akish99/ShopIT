@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stellar | Navbar + Scroll Animation</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/ele3.css">
+  <link rel="stylesheet" href="css/marquee.css">
+</head>
+<body>
+
+  <div class="background"></div>
+  <div class="Login"><a href="login.html">Login</a></div>
+  <div class="Signup"><a href="registeration.html">Signup</a></div>
+
+  <!-- Text Animation -->
+   <div class="centered-text" id="animatedText"></div>
+
+  <!-- Menu Button -->
+  <button class="scribbleMenuBtn" onclick="scribbleOpenDrawer()" id="scribbleOpenBtn">MENU =</button>
+
+  <div class="scribbleDrawerOverlay" id="scribbleDrawerOverlay" tabindex="-1"></div>
+
+  <!-- Menu Drawer -->
+  <nav class="scribbleMenuDrawer" id="scribbleMenuDrawer" aria-modal="true" aria-hidden="true" tabindex="-1">
+    <div class="scribbleMenuTop">
+      <span class="scribbleMenuMission">
+        We make digital products for complex challenges: from mobile apps to enterprise systems.
+      </span>
+      <button class="scribbleMenuCloseBtn" onclick="scribbleCloseDrawer()">CLOSE ×</button>
+    </div>
+    <div class="scribbleStackedMenu">
+      <button class="scribbleStackedItem"><span>ABOUT US</span><span class="scribbleArrow">&rarr;</span></button>
+      <button class="scribbleStackedItem"><span>WORKS</span><span class="scribbleArrow">&rarr;</span></button>
+      <button class="scribbleStackedItem"><span>SERVICES</span><span class="scribbleArrow">&rarr;</span></button>
+      <button class="scribbleStackedItem"><span>CONTACT</span><span class="scribbleArrow">&rarr;</span></button>
+      <button class="scribbleStackedItem"><span>SUPPORT</span><span class="scribbleArrow">&rarr;</span></button>
+      <button class="scribbleStackedItem"><span>MY ACCOUNT</span><span class="scribbleArrow">&rarr;</span></button>
+    </div>
+  </nav>
+
+  
+  <!-- Features -->
+  <section class="features">
+    <div class="feature fade-up">
+      <img src="https://cdn-icons-png.flaticon.com/512/1086/1086933.png" alt="Headphones Icon" />
+      <h4>Premium Headphones</h4>
+      <p>Immersive sound with noise cancellation tech.</p>
+    </div>
+    <div class="feature fade-up">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Free Shipping Icon" />
+      <h4>Free Shipping</h4>
+      <p>Fast and free worldwide delivery.</p>
+    </div>
+    <div class="feature fade-up">
+      <img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" alt="Secure Payment Icon" />
+      <h4>Secure Payment</h4>
+      <p>Safe and encrypted transactions guaranteed.</p>
+    </div>
+  </section>
+
+  <!-- Cards -->
+  <div class="hero-row">
+    <div class="hero-card bg-headphones fade-up">
+      <div class="content">
+        <div class="title">Wireless Headphones</div>
+        <div class="subtitle">Starting from <strong>$299</strong></div>
+        <button class="shop-btn">SHOP NOW</button>
+      </div>
+    </div>
+    <div class="hero-card bg-laptop fade-up">
+      <div class="content">
+        <div class="title">Ultra Laptop Pro</div>
+        <div class="subtitle">Starting from <strong>$1,499</strong></div>
+        <button class="shop-btn">SHOP NOW</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Grid -->
+  <div class="grid">
+    <div class="card fade-up" style="background-image: url('https://i.pinimg.com/1200x/6d/e5/63/6de563e34c6aed3cbd0657a26cc2cf2b.jpg');">
+      <div class="card-content">
+        <h3>Classic Gaming Headset</h3>
+        <p>$149</p>
+        <a class="shop-button" href="#">Shop Now</a>
+      </div>
+    </div>
+    <div class="card fade-up" style="background-image: url('https://m.media-amazon.com/images/I/615mErty5ZL.jpg');">
+      <div class="card-content">
+        <h3>Smartphone Stand</h3>
+        <p>$29</p>
+        <a class="shop-button" href="#">Shop Now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured Products -->
+  <div class="section-title">Featured Products</div>
+  <div class="section-desc">
+    Explore the latest in technology – laptops, headphones, and accessories crafted for performance and style.
+  </div>
+  <div class="product-grid">
+    <div class="cell a fade-up"><img src="https://www.gadgetmatch.com/wp-content/uploads/2019/11/GadgetMatch-20191123-Best-Gaming-Laptops-2019.jpg" alt="Gaming Setup" /></div>
+    <div class="cell b fade-up"><img src="https://images.pexels.com/photos/7974/pexels-photo.jpg?cs=srgb&dl=pexels-life-of-pix-7974.jpg&fm=jpg" alt="Laptop Icon" /></div>
+    <div class="cell c fade-up">
+      <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=600&q=80" alt="Laptop Tall" />
+      <div class="cell-overlay">
+        <div class="cell-title">Pro Laptop X</div>
+        <span>$1,599</span>
+      </div>
+    </div>
+    <div class="cell d fade-up">
+      <div class="cell-title">Bluetooth Speaker</div>
+      <div class="cell-price">$199</div>
+    </div>
+    <div class="cell e fade-up">
+      <div>HEADPHONES &amp; ACCESSORIES</div>
+      <button>SHOP NOW</button>
+    </div>
+    <div class="cell f fade-up"><img src="https://hips.hearstapps.com/hmg-prod/images/tech-gifts-671a977aaeb98.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=1200:*" alt="Tech Accessories" /></div>
+  </div>
+<div class="marquee-container">
+  <div class="marquee-track" id="marqueeTrack">
+
+    <!-- Product items -->
+    <div class="marquee-item"><img src="https://plus.unsplash.com/premium_photo-1678099940967-73fe30680949?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aGVhZHBob25lc3xlbnwwfHwwfHx8MA%3D%3D"><p>Wireless Headphones</p></div>
+    <div class="marquee-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMfgw_UFGK2KR2GX1OI50nVy0FvQ9JA71Rc6rcOEp816Hl_sVTht6Ge92yXqmD8-rdDlY&usqp=CAU"><p>4K Ultra HD Monitor</p></div>
+    <div class="marquee-item"><img src="https://mechboards.co.uk/cdn/shop/files/Horizontal_Pics-small_0008_Generative_Fill.jpg?v=1741174945&width=4000"><p>Mechanical Keyboard</p></div>
+    <div class="marquee-item"><img src="https://kreo-tech.com/cdn/shop/files/Artboard_3_4.png?v=1753673135"><p>Gaming Mouse</p></div>
+    <div class="marquee-item"><img src="https://zebronics.com/cdn/shop/products/Zeb-Drip-pic5.jpg?v=1676445298"><p>Smartwatch Pro</p></div>
+    <div class="marquee-item"><img src="https://cdn.thewirecutter.com/wp-content/media/2023/06/portableSSDs-2048px-4747-2x1-1.jpg?width=2048&quality=75&crop=2:1&auto=webp"><p>Portable SSD</p></div>
+    <div class="marquee-item"><img src="https://cdn.shopify.com/s/files/1/0821/4777/0685/files/r1_480x480.png?v=1711617877"><p>Bluetooth Speaker</p></div>
+    <div class="marquee-item"><img src="https://images.unsplash.com/photo-1623949556303-b0d17d198863?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2ViY2FtfGVufDB8fDB8fHww"><p>Webcam HD</p></div>
+    <div class="marquee-item"><img src="https://baseusindiaofficial.com/cdn/shop/files/McqFR47w.jpg?v=1714038044"><p>Foldable Laptop Stand</p></div>
+
+   <div class="marquee-item"><img src="https://plus.unsplash.com/premium_photo-1678099940967-73fe30680949?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aGVhZHBob25lc3xlbnwwfHwwfHx8MA%3D%3D"><p>Wireless Headphones</p></div>
+    <div class="marquee-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMfgw_UFGK2KR2GX1OI50nVy0FvQ9JA71Rc6rcOEp816Hl_sVTht6Ge92yXqmD8-rdDlY&usqp=CAU"><p>4K Ultra HD Monitor</p></div>
+    <div class="marquee-item"><img src="https://mechboards.co.uk/cdn/shop/files/Horizontal_Pics-small_0008_Generative_Fill.jpg?v=1741174945&width=4000"><p>Mechanical Keyboard</p></div>
+    <div class="marquee-item"><img src="https://kreo-tech.com/cdn/shop/files/Artboard_3_4.png?v=1753673135"><p>Gaming Mouse</p></div>
+    <div class="marquee-item"><img src="https://zebronics.com/cdn/shop/products/Zeb-Drip-pic5.jpg?v=1676445298"><p>Smartwatch Pro</p></div>
+    <div class="marquee-item"><img src="https://cdn.thewirecutter.com/wp-content/media/2023/06/portableSSDs-2048px-4747-2x1-1.jpg?width=2048&quality=75&crop=2:1&auto=webp"><p>Portable SSD</p></div>
+    <div class="marquee-item"><img src="https://cdn.shopify.com/s/files/1/0821/4777/0685/files/r1_480x480.png?v=1711617877"><p>Bluetooth Speaker</p></div>
+    <div class="marquee-item"><img src="https://images.unsplash.com/photo-1623949556303-b0d17d198863?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2ViY2FtfGVufDB8fDB8fHww"><p>Webcam HD</p></div>
+    <div class="marquee-item"><img src="https://baseusindiaofficial.com/cdn/shop/files/McqFR47w.jpg?v=1714038044"><p>Foldable Laptop Stand</p></div>
+</div>
+  </div>
+</div>
+  
+
+  <!-- Footer Section -->
+  <footer>
+    &copy; 2025 ShopIT. Empowering your tech lifestyle. All rights reserved.
+  </footer>
+
+  <script src="js/script.js"></script>
+     <script src="js/ele3.js"></script>
+     <script src="js/marquee.js"></script>
+</body>
+</html>

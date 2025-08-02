@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loader Animation</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .loader {
+      text-align: center;
+    }
+
+    .line {
+      opacity: 0;
+      transform: translateY(-20px);
+      animation-fill-mode: forwards;
+      font-size: 80px;
+    }
+
+    .counter-container {
+      display: inline-block;
+      font-size: 80px;
+      margin-right: 20px;
+      vertical-align: middle;
+      opacity: 0;
+      animation: fadeInCounter 2s ease-in-out 0s forwards, fadeOutCounter 3s ease-in-out 7s forwards;
+    }
+
+    /* .line1 {
+      animation: fadeInOutYour 8s ease-in-out 2s forwards;
+      font-size: 80px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .line2 {
+      animation: fadeInOutWeb 6s ease-in-out 1s forwards;
+      font-size: 80px;
+    }
+
+    .line3 {
+      animation: fadeInOutLoading 4s ease-in-out 0s forwards;
+      font-size: 80px;
+    } */
+
+    .line1 {
+  animation: fadeInOut 6s ease-in-out 0s forwards;
+}
+
+.line2 {
+  animation: fadeInOut 6s ease-in-out 1s forwards;
+}
+
+.line3 {
+  animation: fadeInOut 6s ease-in-out 2s forwards;
+}
+
+    @keyframes fadeInOutLoading {
+      0% { opacity: 0; transform: translateY(-20px);}
+      10% { opacity: 1; transform: translateY(0);}
+      60% { opacity: 1;}
+      80% { opacity: 0; transform: translateY(20px);}
+      100% { opacity: 0;}
+    }
+/* 
+    @keyframes fadeInOutWeb {
+      0% { opacity: 0; transform: translateY(-20px);}
+      10% { opacity: 1; transform: translateY(0);}
+      70% { opacity: 1;}
+      90% { opacity: 0; transform: translateY(20px);}
+      100% { opacity: 0;}
+    } */
+
+     @keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-20px); }
+  10% { opacity: 1; transform: translateY(0); }
+  70% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(20px); }
+}
+
+    @keyframes fadeInOutYour {
+      0% { opacity: 0; transform: translateY(-20px);}
+      10% { opacity: 1; transform: translateY(0);}
+      80% { opacity: 1;}
+      100% { opacity: 0; transform: translateY(20px);}
+    }
+
+    @keyframes fadeInCounter {
+      0% { opacity: 0; }
+      20% { opacity: 1; }
+      100% { opacity: 1; }
+    }
+    @keyframes fadeOutCounter {
+      0% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    .bottom-text {
+      position: absolute;
+      bottom: 40px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 32px;
+      opacity: 0;
+      animation: fadeInBottom 3s ease-in-out 6s forwards;
+    }
+
+    @keyframes fadeInBottom {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="loader">
+    <div style="display: flex; align-items: center; justify-content: center;">
+      <span class="counter-container"><span id="counter">0</span>/100</span>
+      <div class="line line1" style="margin-left: 20px;">Your</div>
+    </div>
+    <div class="line line2">Your ShopIT Experience</div>
+    <div class="line line3">Is Loading...</div>
+  </div>
+  <div class="bottom-text">Please wait a few seconds</div>
+  <script>
+    // Counter animation
+    let counter = 0;
+    const counterElem = document.getElementById('counter');
+    const duration = 6000; // 6 seconds
+    const startTime = performance.now();
+
+    function animateCounter(now) {
+      const elapsed = now - startTime;
+      if (elapsed < duration) {
+        counter = Math.floor((elapsed / duration) * 100);
+        counterElem.textContent = counter;
+        requestAnimationFrame(animateCounter);
+      } else {
+        counterElem.textContent = 100;
+      }
+    }
+    requestAnimationFrame(animateCounter);
+
+setTimeout(() => {
+    window.location.href = "navbar.html";
+}, 11000);
+
+  </script>
+</body>
+</html>

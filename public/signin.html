@@ -1,0 +1,194 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login: Flight Reservation System</title>
+    <style>
+         body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #916abb, #96c9f7);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 30%;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .login-container h1 {
+            color: #007bff;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .login-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .login-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .register-link {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .register-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>Login to Your Account</h2>
+         <form id="loginForm" onsubmit="return validateForm()">  -->
+              <form id="loginForm" onsubmit="return tackleSubmit(event)">
+
+
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="emailOrUsername" name="username" placeholder="Enter your username">
+                <div id="user-message" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+                <div id="pass-message" class="error"></div>
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+        <div class="register-link">
+            Don't have an account? <a href="signup.html" target="_blank">Register here</a>
+        </div> 
+     </div> 
+
+     <script>
+
+function tackleSubmit(event) {
+    event.preventDefault(); // Prevents form refresh
+
+    if (!validateForm()) {
+        return false; 
+    }
+
+    loginUser(); 
+    return false; 
+}
+
+function validateForm() {
+    const emailOrUsername = document.getElementById("emailOrUsername").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const userMessage = document.getElementById("user-message");
+    const passMessage = document.getElementById("pass-message");
+
+    userMessage.textContent = "";
+    passMessage.textContent = "";
+
+    let isValid = true;
+
+    if (emailOrUsername === "") {
+        userMessage.textContent = "Please enter your username.";
+        isValid = false;
+    }
+
+    const passPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$/;
+    if (password === "") {
+        passMessage.textContent = "Please enter your password.";
+        isValid = false;
+    } else if (!passPattern.test(password)) {
+        passMessage.textContent = "Password must be at least 8 characters long and include an uppercase letter, a lowercase letter, a number, and a special character.";
+        isValid = false;
+    }
+
+    return isValid; 
+}
+
+// --------------------------------------------------------------------------------------
+
+async function loginUser() {
+    const emailOrUsername = document.getElementById("emailOrUsername").value.trim();
+    const password = document.getElementById("password").value;
+
+    console.log("Sending Login Data:", { emailOrUsername, password });
+
+    try {
+
+        const response = await fetch("http://localhost:5000/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ emailOrUsername, password }), 
+        });
+
+        const data = await response.json();
+        console.log("Server Response:", data);
+
+        if (response.ok) {
+            alert("Login successful!");
+            window.location.href = "index.html";
+        } else {
+            alert(`Error: ${data.message}`);
+        }
+    } catch (error) {
+        console.error("Fetch error:", error);
+        alert("Login request failed.");
+    }
+}
+
+
+document.getElementById("loginForm").addEventListener("submit", tackleSubmit);
+
+    </script>
+</body>
+</html> 
