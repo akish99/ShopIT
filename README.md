@@ -1,6 +1,6 @@
-# ShopIT — By Pseudo Coders
+# ShopIT — By Pseuduo Coders
 
-**ShopIT** is a modern e-commerce website focused on selling electronic accessories such as keyboards, mice, headphones, and more. Built for the Webathon by our team *Pseudo Coders*, this project demonstrates the integration of multiple frontend features into a cohesive, responsive, and animated shopping experience.
+**ShopIT** is a modern e-commerce website focused on selling electronic accessories such as keyboards, mice, headphones, and more. Built for the Webathon by our team *Pseuduo Coders*, this project demonstrates the integration of multiple frontend features into a cohesive, responsive, and animated shopping experience.
 
 ---
 
@@ -57,7 +57,7 @@ To run the project locally:
 
 ---
 
-## 👨‍💻 Team: Pseudo Coders
+## 👨‍💻 Team: Pseuduo Coders
 
 Built as part of the Webathon challenge. Contributions welcome!
 
