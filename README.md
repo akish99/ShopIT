@@ -46,8 +46,8 @@
 
 
 ## 👨‍💻 Team: Pseuduo Coders
-Team leader:- Akish Pandey , SE Comps
-Team Members:- Prakriti Tiwari, SE Comps
+-Team leader:- Akish Pandey 
+-Team Members:- Prakriti Tiwari
 
 Built as part of the Webathon challenge. Contributions welcome!
 
