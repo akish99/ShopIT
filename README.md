@@ -28,7 +28,8 @@
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** HTML, CSS, JavaScript  
+- **Frontend:** HTML, CSS, JavaScript
+- **Backend:** Express  
 - **Database:** MySQL  
 - **Animations:** Scroll-based animations, custom CSS transitions
 
@@ -43,18 +44,6 @@
 - Infinite Product Marquee
 - Product Image Grid (partial)
 
----
-
-## 🚀 Getting Started
-
-To run the project locally:
-
-1. Clone this repository
-2. Import the SQL database file (if provided)
-3. Start your backend server (e.g., XAMPP or Node)
-4. Open `index.html` in your browser
-
----
 
 ## 👨‍💻 Team: Pseuduo Coders
 
