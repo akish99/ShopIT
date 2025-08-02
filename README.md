@@ -29,7 +29,6 @@
 ## 🛠️ Tech Stack
 
 - **Frontend:** HTML, CSS, JavaScript  
-- **Backend:** PHP / Node.js *(if applicable)*  
 - **Database:** MySQL  
 - **Animations:** Scroll-based animations, custom CSS transitions
 
