@@ -2,100 +2,138 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Loader</title>
+  <title>ShopIT Loader</title>
+  <!-- Google Fonts for modern styling -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:900,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:italic,400,700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      background: black;
-      color: white;
-      font-family: Arial, sans-serif;
+      background: #000;
+      color: #fff;
+      font-family: 'Montserrat', Arial, sans-serif;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
       overflow: hidden;
+      min-width: 320px;
     }
 
     .loader {
       text-align: center;
+      width: 100vw;
+      max-width: 100vw;
+      position: relative;
+      z-index: 2;
     }
 
-    .line {
-      opacity: 0;
-      transform: translateY(-20px);
-      animation-fill-mode: forwards;
-      font-size: 80px;
+    .loader-row {
+      display: flex;
+      align-items: center;  /* changed from baseline to center */
+      justify-content: center; /* centers horizontally */
+      gap: 3vw;
+      margin-bottom: 3px;
+      flex-wrap: wrap;
+      width: 100%;
     }
 
     .counter-container {
-      display: inline-block;
-      font-size: 80px;
-      margin-right: 20px;
-      vertical-align: middle;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 2.7vw;
+      min-width: 160px;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: 2px;
       opacity: 0;
-      animation: fadeInCounter 2s ease-in-out 0s forwards, fadeOutCounter 3s ease-in-out 7s forwards;
-    }
-
-    /* .line1 {
-      animation: fadeInOutYour 8s ease-in-out 2s forwards;
-      font-size: 80px;
-      display: inline-block;
+      animation: fadeInCounter 2s ease-in-out 0s forwards, fadeOutCounter 2s ease-in-out 7s forwards;
       vertical-align: middle;
+      margin: 0 30px 0 0;
+      text-align: right;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
     }
 
-    .line2 {
-      animation: fadeInOutWeb 6s ease-in-out 1s forwards;
-      font-size: 80px;
+    .line, .line span {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+      text-align: left;
+      white-space: nowrap;
+      margin: 0;
     }
 
-    .line3 {
-      animation: fadeInOutLoading 4s ease-in-out 0s forwards;
-      font-size: 80px;
-    } */
-
-    .line1 {
-  animation: fadeInOut 6s ease-in-out 0s forwards;
-}
-
-.line2 {
-  animation: fadeInOut 6s ease-in-out 1s forwards;
-}
-
-.line3 {
-  animation: fadeInOut 6s ease-in-out 2s forwards;
-}
-
-    @keyframes fadeInOutLoading {
-      0% { opacity: 0; transform: translateY(-20px);}
-      10% { opacity: 1; transform: translateY(0);}
-      60% { opacity: 1;}
-      80% { opacity: 0; transform: translateY(20px);}
-      100% { opacity: 0;}
-    }
-/* 
-    @keyframes fadeInOutWeb {
-      0% { opacity: 0; transform: translateY(-20px);}
-      10% { opacity: 1; transform: translateY(0);}
-      70% { opacity: 1;}
-      90% { opacity: 0; transform: translateY(20px);}
-      100% { opacity: 0;}
-    } */
-
-     @keyframes fadeInOut {
-  0% { opacity: 0; transform: translateY(-20px); }
-  10% { opacity: 1; transform: translateY(0); }
-  70% { opacity: 1; }
-  100% { opacity: 0; transform: translateY(20px); }
-}
-
-    @keyframes fadeInOutYour {
-      0% { opacity: 0; transform: translateY(-20px);}
-      10% { opacity: 1; transform: translateY(0);}
-      80% { opacity: 1;}
-      100% { opacity: 0; transform: translateY(20px);}
+    .line-big {
+      font-size: 3.6vw;
+      margin: 0;
     }
 
+    .line-mid {
+      font-size: 2.1vw;
+      margin: 0;
+    }
+
+    .line-fade {
+      opacity: 0;
+      transform: translateY(-24px);
+      animation: fadeInOut 7s ease-in-out 0s forwards;
+      display: inline-block;
+    }
+    .line-fade2 {
+      opacity: 0;
+      transform: translateY(-24px);
+      animation: fadeInOut 7s ease-in-out 0.6s forwards;
+      display: inline-block;
+    }
+    .line-fade3 {
+      opacity: 0;
+      transform: translateY(-24px);
+      animation: fadeInOut 7s ease-in-out 1.25s forwards;
+      display: inline-block;
+    }
+
+    .shopit-highlight {
+      color: #ffb243;  /* Orange, change this for your brand */
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      font-size: 1.12em;
+    }
+
+    .now-word {
+      font-family: 'Playfair Display', serif;
+      color: #c40b0b;
+      font-style: italic;
+      font-size: 3.9vw;
+      letter-spacing: 1px;
+      text-shadow:
+        0 2px 0 #000,
+        2px 0 0 #000,
+        0 -2px 0 #000,
+        -2px 0 0 #000;
+      font-weight: 400;
+      margin-left: 0.8vw;
+      position: relative;
+      z-index: 1;
+    }
+    .bottom-text {
+      position: absolute;
+      bottom: 38px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 1.2vw;
+      letter-spacing: 0.3px;
+      color: #ccc;
+      font-family: 'Montserrat', Arial, sans-serif;
+      opacity: 0;
+      animation: fadeInBottom 3s ease-in-out 6s forwards;
+    }
+
+    /* Animations */
     @keyframes fadeInCounter {
       0% { opacity: 0; }
       20% { opacity: 1; }
@@ -105,39 +143,53 @@
       0% { opacity: 1; }
       100% { opacity: 0; }
     }
-
-    .bottom-text {
-      position: absolute;
-      bottom: 40px;
-      left: 0;
-      width: 100%;
-      text-align: center;
-      font-size: 32px;
-      opacity: 0;
-      animation: fadeInBottom 3s ease-in-out 6s forwards;
+    @keyframes fadeInOut {
+      0% { opacity: 0; transform: translateY(-20px);}
+      14% { opacity: 1; transform: translateY(0);}
+      85% { opacity: 1; }
+      100% { opacity: 0; transform: translateY(20px);}
     }
-
     @keyframes fadeInBottom {
       0% { opacity: 0; }
       100% { opacity: 1; }
+    }
+
+    @media (max-width: 900px) {
+      .line-big, .now-word { font-size: 5.5vw;}
+      .line-mid {font-size: 3.7vw;}
+      .counter-container {font-size: 5vw;}
+      .bottom-text { font-size: 2vw;}
+    }
+    @media (max-width:580px) {
+      .line-big, .now-word { font-size: 8vw;}
+      .line-mid { font-size: 5vw;}
+      .counter-container { font-size: 7vw; }
+      .bottom-text { font-size: 4vw;}
+      .loader-row { flex-direction: column; gap: 8px;}
+      .counter-container { justify-content: center; }
     }
   </style>
 </head>
 <body>
   <div class="loader">
-    <div style="display: flex; align-items: center; justify-content: center;">
-      <span class="counter-container"><span id="counter">0</span>/100</span>
-      <div class="line line1" style="margin-left: 20px;">Your</div>
+    <div class="loader-row">
+      <span class="counter-container"><span id="counter">0</span> / 100</span>
+      <span class="line line-fade line-big">YOUR</span>
     </div>
-    <div class="line line2">Your ShopIT Experience</div>
-    <div class="line line3">Is Loading...</div>
+    <div class="line line-fade2 line-big">
+      <span class="shopit-highlight">ShopIT</span> EXPERIENCE &nbsp;
+    </div>
+    <br>
+    <div class="line line-fade3 line-big">
+      IS LOADING RIGHT <span class="now-word">NOW</span>
+    </div>
   </div>
   <div class="bottom-text">Please wait a few seconds</div>
   <script>
     // Counter animation
     let counter = 0;
     const counterElem = document.getElementById('counter');
-    const duration = 6000; // 6 seconds
+    const duration = 6000;
     const startTime = performance.now();
 
     function animateCounter(now) {
@@ -152,10 +204,10 @@
     }
     requestAnimationFrame(animateCounter);
 
-setTimeout(() => {
-    window.location.href = "main.html";
-}, 11000);
-
+    //Redirect after animation, adjust time as needed
+    setTimeout(() => {
+      window.location.href = "main.html";
+    }, 11000);
   </script>
 </body>
 </html>
